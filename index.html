@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>七下词汇记忆样本</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="top">
+        <nav class="phase-tabs" aria-label="听说读写">
+          <button class="phase active" data-phase="listen" title="听" aria-label="听" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 9.5v5h4l5 4.25V5.25L8 9.5H4Z"></path>
+              <path d="M16.25 8.25a5 5 0 0 1 0 7.5"></path>
+              <path d="M18.75 5.75a8.5 8.5 0 0 1 0 12.5"></path>
+            </svg>
+          </button>
+          <button class="phase" data-phase="speak" title="说" aria-label="说" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V8a4 4 0 0 0-4-4Z"></path>
+              <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"></path>
+              <path d="M12 18v3"></path>
+              <path d="M8.5 21h7"></path>
+            </svg>
+          </button>
+          <button class="phase" data-phase="read" title="读" aria-label="读" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2.8 12s3.4-6 9.2-6 9.2 6 9.2 6-3.4 6-9.2 6-9.2-6-9.2-6Z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+          <button class="phase" data-phase="write" title="写" aria-label="写" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 20l4.6-1.1L19.4 8.1a2.1 2.1 0 0 0 0-3l-.5-.5a2.1 2.1 0 0 0-3 0L5.1 15.4 4 20Z"></path>
+              <path d="M14.7 5.8l3.5 3.5"></path>
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      <section class="stage">
+        <div class="stage-head">
+          <div>
+            <div class="eyebrow" id="modeLabel"></div>
+            <h2 id="titleWord">fox</h2>
+          </div>
+        </div>
+
+        <section class="task active" id="listenTask">
+          <div class="hero-card" id="listenHero">
+            <div class="visual" id="listenVisual"></div>
+            <div class="meaning" id="listenMeaning"></div>
+            <div class="big-actions listen-actions">
+              <button class="round icon-button" id="listenSound" title="复听原音" aria-label="复听原音" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 9.5v5h4l5 4.25V5.25L8 9.5H4Z"></path>
+                  <path d="M16.25 8.25a5 5 0 0 1 0 7.5"></path>
+                  <path d="M18.75 5.75a8.5 8.5 0 0 1 0 12.5"></path>
+                </svg>
+              </button>
+              <button class="next icon-button secondary-action" id="listenNext" title="下一个" aria-label="下一个" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5.2 12h12.8"></path>
+                  <path d="M12 6 18 12 12 18"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="test-area hidden" id="listenTest">
+            <div class="test-actions">
+              <button class="round icon-button" id="listenTestSound" title="复听原音" aria-label="复听原音" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 9.5v5h4l5 4.25V5.25L8 9.5H4Z"></path>
+                  <path d="M16.25 8.25a5 5 0 0 1 0 7.5"></path>
+                  <path d="M18.75 5.75a8.5 8.5 0 0 1 0 12.5"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="choice-grid" id="listenChoices"></div>
+            <div class="feedback" id="listenFeedback"></div>
+          </div>
+        </section>
+
+        <section class="task" id="speakTask">
+          <div class="speak-board">
+            <div class="speak-visual visual" id="speakVisual"></div>
+            <div class="word-equation" id="speakEquation"></div>
+            <div class="score idle hidden" id="speakScore">--</div>
+          </div>
+          <div class="speak-actions">
+            <button class="round icon-button" id="originalSound" type="button" title="听原音" aria-label="听原音">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 9.5v5h4l5 4.25V5.25L8 9.5H4Z"></path>
+                <path d="M16.25 8.25a5 5 0 0 1 0 7.5"></path>
+                <path d="M18.75 5.75a8.5 8.5 0 0 1 0 12.5"></path>
+              </svg>
+            </button>
+            <button class="round icon-button" id="recordVoice" type="button" title="录音" aria-label="录音">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V8a4 4 0 0 0-4-4Z"></path>
+                <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"></path>
+                <path d="M12 18v3"></path>
+                <path d="M8.5 21h7"></path>
+              </svg>
+            </button>
+            <button class="hidden" id="myVoice" type="button" title="本音">听自己</button>
+            <button class="hidden" id="speakNext" type="button" title="Next">Next</button>
+          </div>
+          <div class="microcopy" id="speakPrompt">拆分读3遍，整体读3遍。</div>
+        </section>
+
+        <section class="task" id="readTask">
+          <div class="read-card">
+            <div class="read-prompt">
+              <div class="visual small-visual" id="readChoiceVisual"></div>
+              <div class="meaning" id="readChoiceMeaning"></div>
+            </div>
+            <div class="word-choice-grid" id="wordChoices"></div>
+            <div class="feedback" id="wordChoiceFeedback"></div>
+          </div>
+          <div class="read-actions">
+            <button class="round icon-button" id="readSound" title="播放" aria-label="播放" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 9.5v5h4l5 4.25V5.25L8 9.5H4Z"></path>
+                <path d="M16.25 8.25a5 5 0 0 1 0 7.5"></path>
+                <path d="M18.75 5.75a8.5 8.5 0 0 1 0 12.5"></path>
+              </svg>
+            </button>
+            <button class="next icon-button secondary-action" id="readNext" type="button" title="Next" aria-label="下一个">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5.2 12h12.8"></path>
+                <path d="M12 6 18 12 12 18"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="restore">
+            <div class="restore-prompt">
+              <div class="visual small-visual" id="restoreVisual"></div>
+              <div class="meaning" id="restoreMeaning"></div>
+            </div>
+            <div class="restore-bank" id="restoreBank"></div>
+            <div class="restore-target" id="restoreTarget"></div>
+            <div class="feedback" id="restoreFeedback"></div>
+          </div>
+        </section>
+
+        <section class="task" id="writeTask">
+          <div class="write-card">
+            <div class="write-mode" id="writeModeLabel">完全听写</div>
+            <div class="mini-visual">
+              <div class="visual small-visual" id="writeVisual"></div>
+              <div class="meaning" id="writeMeaning"></div>
+            </div>
+            <div class="input-row">
+              <button class="round small" id="writeSound" title="播放" type="button">🔊</button>
+              <input id="writeInput" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="control-row">
+              <button class="tool icon-tool" id="checkWrite" type="button" title="Check">✓</button>
+              <button class="next icon-next" id="writeNext" type="button" title="Next">→</button>
+            </div>
+            <div class="feedback" id="writeFeedback"></div>
+          </div>
+        </section>
+
+        <section class="complete hidden" id="completeTask">
+          <div class="complete-mark">✓</div>
+          <h2>这一组完成</h2>
+          <p>10个词已经完成听、说、读、写。</p>
+          <button class="next" id="restart" type="button">重新开始</button>
+        </section>
+      </section>
+
+      <footer class="word-strip" id="wordStrip"></footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

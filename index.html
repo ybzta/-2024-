@@ -9,6 +9,7 @@
   <body>
     <main class="shell">
       <header class="top">
+        <button class="unit-chip" id="unitMenuButton" type="button" aria-haspopup="true" aria-expanded="false">U1A</button>
         <nav class="phase-tabs" aria-label="听说读写">
           <button class="phase active" data-phase="listen" title="听" aria-label="听" type="button">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -38,6 +39,7 @@
             </svg>
           </button>
         </nav>
+        <div class="unit-menu hidden" id="unitMenu"></div>
       </header>
 
       <section class="stage">
@@ -69,6 +71,7 @@
             </div>
           </div>
           <div class="test-area hidden" id="listenTest">
+            <div class="choice-grid" id="listenChoices"></div>
             <div class="test-actions">
               <button class="round icon-button" id="listenTestSound" title="复听原音" aria-label="复听原音" type="button">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -77,8 +80,13 @@
                   <path d="M18.75 5.75a8.5 8.5 0 0 1 0 12.5"></path>
                 </svg>
               </button>
+              <button class="next icon-button secondary-action" id="listenTestNext" title="下一个" aria-label="下一个" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5.2 12h12.8"></path>
+                  <path d="M12 6 18 12 12 18"></path>
+                </svg>
+              </button>
             </div>
-            <div class="choice-grid" id="listenChoices"></div>
             <div class="feedback" id="listenFeedback"></div>
           </div>
         </section>
@@ -148,19 +156,30 @@
 
         <section class="task" id="writeTask">
           <div class="write-card">
-            <div class="write-mode" id="writeModeLabel">完全听写</div>
+            <div class="write-mode" id="writeModeLabel"></div>
             <div class="mini-visual">
               <div class="visual small-visual" id="writeVisual"></div>
               <div class="meaning" id="writeMeaning"></div>
             </div>
             <div class="input-row">
-              <button class="round small" id="writeSound" title="播放" type="button">🔊</button>
               <input id="writeInput" autocomplete="off" spellcheck="false" />
             </div>
-            <div class="control-row">
-              <button class="tool icon-tool" id="checkWrite" type="button" title="Check">✓</button>
-              <button class="next icon-next" id="writeNext" type="button" title="Next">→</button>
+            <div class="big-actions listen-actions write-actions">
+              <button class="round icon-button" id="writeSound" title="Sound" aria-label="Sound" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 9.5v5h4l5 4.25V5.25L8 9.5H4Z"></path>
+                  <path d="M16.25 8.25a5 5 0 0 1 0 7.5"></path>
+                  <path d="M18.75 5.75a8.5 8.5 0 0 1 0 12.5"></path>
+                </svg>
+              </button>
+              <button class="next icon-button secondary-action" id="writeNext" type="button" title="Next" aria-label="Next">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5.2 12h12.8"></path>
+                  <path d="M12 6 18 12 12 18"></path>
+                </svg>
+              </button>
             </div>
+            <button class="hidden" id="checkWrite" type="button" title="Check">✓</button>
             <div class="feedback" id="writeFeedback"></div>
           </div>
         </section>
